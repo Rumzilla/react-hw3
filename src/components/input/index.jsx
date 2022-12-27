@@ -7,17 +7,17 @@ export default class Input extends Component {
         input: '',
         items: []
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState ({
         input: event.target.value
     })
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault()
     this.setState ({
         input: this.state.input,
@@ -33,7 +33,7 @@ export default class Input extends Component {
         <input value={this.state.input} onChange={this.handleChange} />
         <button type='submit'>Submit</button>
         </form>
-        <h5>Controlled Input</h5>
+        <h5>To Do:</h5>
         <ul>
             {this.state.items.map((item, index) => (
                 <li key={index}>{item}</li>
